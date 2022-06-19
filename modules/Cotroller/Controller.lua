@@ -1,14 +1,17 @@
-require "common.class"
+local class = require "modules.class.class"
 
----@class Controller 
-local Controller = class("Controller")
 
-function Controller:ctor(child)
-    self.child = child
-end
+local Controller = class()
 
-function Controller:send(player,view,package)
-    PackageHandlers.sendServerHandler(player,view,package)
-end
+Controller:create("Controller",function ()
+    ---@class Controller
+    local this = {}
+    
+    function this:send(player,view,package)
+        PackageHandlers.sendServerHandler(player,view,package)
+    end
+    return this
+end)
+
 
 return Controller

@@ -1,19 +1,32 @@
-require "common.class"
---- @class entity_model
+local class = require "modules.class.class"
+
 local entity_model = require "modules.Model.entity_model"
 
----@class Player
-local Player = class("Player_model", entity_model)
 
-function Player:ctor(obj)
-    self.platformUserId = obj.platformUserId
-    self.super:ctor(self,obj,"myplugin/player1")
-    PlayerModel:addPlayer(obj,self)
-end
+local Player = class()
 
-function Player:onTouchPartBegin(context)
-    print(self.platformUserId,"lololo")
-    self:sendController(PackageHandlers.TEST_VIEW,{text = "mamama"})
-end
+Player:create("player_model",function ()
+    ---@class player_model : entity_model
+    local this,super = entity_model:extend()
+    
+    function this:__constructor(obj)
+        this.platformUserId = obj.platformUserId
+        super:__constructor(obj,"myplugin/player1")
+        PlayerModel:addPlayer(obj,this)
+    end
+    
+    function this:onTouchPartBegin(context)
+        print(this.platformUserId,"lololo")
+        this:sendController(PackageHandlers.TEST_VIEW,{text = "mamama"})
+    end
+
+    function this:onLeave()
+        this:__destructor()
+    end
+
+    
+    return this
+end)
+
 
 return Player

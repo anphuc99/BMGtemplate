@@ -1,14 +1,18 @@
-require "common.class"
+local class = require "modules.class.class"
 
----@class model 
-local model = class("model")
+local model = class()
 
-function model:ctor(child)
-    self.child = child
-end
+model:create("model",function ()
+    ---@class model
+    local this = {}
+    
+    function this:sendController(package_name,package)
+        Lib.emitEvent(package_name,this,package)
+    end
 
-function model:sendController(package_name,package)
-    Lib.emitEvent(package_name,self.child,package)
-end
+
+    return this
+end)
+
 
 return model

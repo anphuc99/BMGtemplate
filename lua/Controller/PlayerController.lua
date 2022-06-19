@@ -1,17 +1,18 @@
-require "common.class"
-
----@class Controller
+local class = require "modules.class.class"
 local Controller = require "modules.Cotroller.Controller"
 
----@class PlayerController : Controller
-local PlayerController = class("PlayerController",Controller)
+local PlayerController = class()
 
-function PlayerController:ctor()
-    self.super:ctor(self)
-end
+PlayerController:create("PlayerController",function ()
+    ---@class PlayerController : Controller
+    local this,super = Controller:extend()
+    
+    function this:test(player,package)
+        print("hahahaha", package.text)
+    end
+    
+    return this
+end)
 
-function PlayerController:test(player,package)
-    print("hahahaha", package.text)
-end
 
 return PlayerController

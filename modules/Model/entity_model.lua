@@ -1,24 +1,34 @@
-require "common.class"
---- @class entity_model_event
+local class = require "modules.class.class"
 local entity_model_event = require "modules.Model.Event.entity_model_event"
 
----@class model
 local model = require "modules.Model.model"
 
---- @class entity_model : model
-local entity_model = class("entity_model", model)
+local entity_model = class()
 
-local event = entity_model_event.new({
+--- @class entity_model_event
+local event = entity_model_event:new({
     ENTITY_ENTER = "onEnter",
-    ENTITY_TOUCH_PART_BEGIN = "onTouchPartBegin"
+    ENTITY_TOUCH_PART_BEGIN = "onTouchPartBegin",
+    ENTITY_LEAVE = "onLeave"
 })
 
-function entity_model:ctor(child,obj,cfg)
-    self.cfg = cfg
-    self.objID = obj.objID
-    self.super:ctor(child)
-    event:add(child)
-    event:registerCfg(cfg)
-end
+
+entity_model:create("entity_model",function ()
+    ---@class entity_model : model 
+    local this = model:extend()
+
+    function this:__constructor(obj,cfg)
+        this.cfg = cfg
+        this.objID = obj.objID
+        event:add(this)
+        event:registerCfg(cfg)
+    end
+
+    function this:__destructor()
+        event:delete(this)
+        this = nil
+    end
+    return this
+end)
 
 return entity_model

@@ -1,28 +1,44 @@
-require "common.class"
+local class = require "modules.class.class"
+local event_model = class()
 
----@class event_model
-local event_model = class("event_model")
+event_model:create("event_model",function ()
+    ---@class event_model
+    local this = {}
+    
+    function this:__constructor(event)
+        this.event = event
+        this.list = {}    
+        this.listCfg = {}    
+    end
+    
+    function this:add(obj)
+        table.insert(this.list, obj)
+    end
 
-function event_model:ctor(event)
-    self.event = event
-    self.list = {}    
-    self.listCfg = {}    
-end
-
-function event_model:add(obj)
-    table.insert(self.list, obj)
-end
-
-function event_model:registerCfg(cfg,fcfg,func)
-    local rs = table.find(cfg,self.listCfg)
-    if not rs then
-        table.insert(self.listCfg,cfg)
-        for key, value in pairs(self.event) do
-            Trigger.RegisterHandler(fcfg(cfg),key,function (context)
-                func(context,value)
-            end)
+    function this:delete(obj)
+        for index, value in ipairs(this.list) do
+            if value == obj then
+                table.remove(this.list,index)
+                break
+            end
         end
     end
-end
+    
+    function this:registerCfg(cfg,fcfg,func)
+        local rs = table.find(cfg,this.listCfg)
+        if not rs then
+            table.insert(this.listCfg,cfg)
+            for key, value in pairs(this.event) do
+                Trigger.RegisterHandler(fcfg(cfg),key,function (context)
+                    func(context,value)
+                end)
+            end
+        end
+    end
+    
+    return this
+end)
+
+
 
 return event_model
