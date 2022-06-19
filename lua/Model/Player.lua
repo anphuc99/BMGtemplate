@@ -16,7 +16,6 @@ Player:create("player_model",function ()
     end
     
     function this:onTouchPartBegin(context)
-        print(this.platformUserId,"lololo")
         this:sendController(PackageHandlers.TEST_VIEW,{text = "mamama"})
     end
 
