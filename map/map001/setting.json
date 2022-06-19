@@ -1,0 +1,78 @@
+{
+  "canBreak": true,
+  "hideCloud": true,
+  "moveDownGravity": 0.15,
+  "scene": [
+    {
+      "class": "VoxelTerrain",
+      "properties": {
+        "__folder_id": "",
+        "id": "26644713697705985",
+        "name": "VoxelTerrain",
+        "uniqueKey": "map001"
+      }
+    },
+    {
+      "class": "Part",
+      "properties": {
+        "angleVelocity": "x:0 y:0 z:0",
+        "bloom": "false",
+        "booleanOperation": "0",
+        "btsKey": "bdadae19-796a-482c-badc-212dab347d24",
+        "cameraCollideEnable": "true",
+        "collisionUniqueKey": "",
+        "customThreshold": "1",
+        "density": "2.2",
+        "discardAlpha": "1.0",
+        "friction": "0.37",
+        "id": "8677892069352079361",
+        "isLockedInEditor": "false",
+        "isVisibleInEditor": "true",
+        "lineVelocity": "x:0 y:0 z:0",
+        "mass": "2.1999994754791",
+        "materialAlpha": "1",
+        "materialColor": "r:1.0 g:1.0 b:1.0 a:1.0",
+        "materialOffset": "x:1 y:1 z:1.0",
+        "materialTexture": "part_suliao.tga",
+        "name": "Part",
+        "needSync": "true",
+        "partNavMeshType": "1",
+        "position": "x:13.935412406921 y:1.4998970031738 z:13.873024940491",
+        "restitution": "0.3",
+        "rotation": "x:-0.0 y:0.0 z:0.0",
+        "scale": "x:1 y:1 z:1",
+        "selectable": "true",
+        "shape": "1",
+        "staticBatchNo": "",
+        "staticObject": "false",
+        "useAnchor": "false",
+        "useCollide": "true",
+        "useGravity": "true",
+        "useTextureAlpha": "false"
+      }
+    }
+  ],
+  "skyBox": [
+    {
+      "texture": [
+        "@asset/Texture/SkyBox/Common2/Sky03_right.png",
+        "@asset/Texture/SkyBox/Common2/Sky03_left.png",
+        "@asset/Texture/SkyBox/Common2/Sky03_top.png",
+        "@asset/Texture/SkyBox/Common2/Sky03_bottom.png",
+        "@asset/Texture/SkyBox/Common2/Sky03_back.png",
+        "@asset/Texture/SkyBox/Common2/Sky03_front.png"
+      ]
+    }
+  ],
+  "skyBoxRotate": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "skyBoxTexPixFmt": "RGBA8",
+  "skyBoxTexSize": 512,
+  "touchPosY": {
+    "touchdownPosY": -30.0,
+    "touchupPosY": 600
+  }
+}

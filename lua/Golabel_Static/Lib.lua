@@ -1,0 +1,3 @@
+Lib.Model = {
+    Player = {}
+}

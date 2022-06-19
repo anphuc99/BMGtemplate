@@ -1,0 +1,5 @@
+require "Golabel_Static.Event"
+require "Golabel_Static.Lib"
+require "Golabel_Static.PackageHandlers"
+require "Golabel_Static.table"
+require "Golabel_Static.PlayerModel"
