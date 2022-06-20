@@ -6,6 +6,7 @@ local entity_model_event = class()
 
 entity_model_event:create("entity_model_event",function ()
     ---@class entity_model_event : event_model
+    ---@class event_model
     local this,super = event_model:extend()
     
     function this:registerCfg(cfg)
@@ -14,9 +15,7 @@ entity_model_event:create("entity_model_event",function ()
                 if obj.objID == context.obj1.objID then
                     local func = obj[event]
                     if func then
-                        func(obj,context)
-                    else
-                        print("deo co")
+                        func(obj,context)                    
                     end
                 end
             end

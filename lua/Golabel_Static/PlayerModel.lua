@@ -13,3 +13,5 @@ end
 function PlayerModel:getAllPlayer()
     return PlayerModel.list
 end
+
+Entity.addValueDef("player",nil,true,true,false,false)

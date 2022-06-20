@@ -8,11 +8,16 @@ PlayerController:create("PlayerController",function ()
     local this,super = Controller:extend()
     
     function this:test(player,package)
-        print("hahahaha", package.text)
+        print("lololo")
+        this:sendView(player,PackageHandlers.SEND_CONTROLLER_TO_VIEW,{text = "mamama"})
     end
     
+    function this:viewSend(player, packet)
+        print("co ne nha", player.Object.name)
+    end
+
     return this
 end)
 
-
-return PlayerController
+local cls = PlayerController:new()
+return cls

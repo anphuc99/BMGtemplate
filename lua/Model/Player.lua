@@ -1,29 +1,26 @@
 local class = require "modules.class.class"
 
-local entity_model = require "modules.Model.entity_model"
+local player_model = require "modules.Model.player_model"
 
 
 local Player = class()
 
-Player:create("player_model",function ()
-    ---@class player_model : entity_model
-    local this,super = entity_model:extend()
+Player:create("Player",function ()
+    ---@class Player : player_model
+    local this,super = player_model:extend()
     
     function this:__constructor(obj)
-        this.platformUserId = obj.platformUserId
-        super:__constructor(obj,"myplugin/player1")
-        PlayerModel:addPlayer(obj,this)
+        super:__constructor(obj)
     end
     
     function this:onTouchPartBegin(context)
         this:sendController(PackageHandlers.TEST_VIEW,{text = "mamama"})
     end
 
-    function this:onLeave()
-        this:__destructor()
+    function this:onInit()
+        super:onInit()
     end
 
-    
     return this
 end)
 

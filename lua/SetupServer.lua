@@ -1,3 +1,4 @@
+require "Controller.protocol"
 local PlayerModel = require "Model.Player"
 
 Trigger.addHandler(Entity.GetCfg("myplugin/player1"),"ENTITY_ENTER", function (context)
