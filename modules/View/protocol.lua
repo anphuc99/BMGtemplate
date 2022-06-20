@@ -2,7 +2,7 @@
 local protocol = {}
 
 ---@param package_name string
----@param View any
+---@param View function
 function protocol:register(package_name, View)
     PackageHandlers.registerClientHandler(package_name,function (player,package)
         return View(nil, package)

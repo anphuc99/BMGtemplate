@@ -53,11 +53,11 @@ local event = entity_model_event:new({
 })
 
 
-entity_model:create("entity_model",function ()
-    ---@class entity_model : model 
-    local this,super = model:extend()
+entity_model:create("entity_model", function()
+    ---@class entity_model : model
+    local this, super = model:extend()
 
-    function this:__constructor(obj,cfg)
+    function this:__constructor(obj, cfg)
         this.cfg = cfg
         this.objID = obj.objID
         this.Object = obj
@@ -73,133 +73,133 @@ entity_model:create("entity_model",function ()
 
     function this:onBuyCommodity()
     end
-    
+
     function this:onApart()
     end
-    
+
     function this:onBuffRemove()
     end
-    
+
     function this:onTeleport()
     end
-    
+
     function this:onEnter()
     end
-    
+
     function this:onDamage()
     end
-    
+
     function this:onTouchPartBegin()
     end
-    
+
     function this:onRebirth()
     end
-    
+
     function this:onDoAttack()
     end
-    
+
     function this:onGameOver()
     end
-    
+
     function this:onBuffAdd()
     end
-    
+
     function this:onLeave()
     end
-    
+
     function this:onTouchPartEnd()
     end
-    
+
     function this:onDie()
     end
-    
+
     function this:onUserItem()
     end
-    
+
     function this:onTouch()
     end
-    
+
     function this:onStatusChange()
     end
-    
+
     function this:onVpEmpty()
     end
-    
+
     function this:onStartTouch()
     end
-    
+
     function this:onRideOn()
     end
-    
+
     function this:onTouchDown()
     end
-    
+
     function this:onSecondTimer()
     end
-    
+
     function this:onTouchAll()
     end
-    
+
     function this:onCanRebirth()
     end
-    
+
     function this:onHitted()
     end
-    
+
     function this:onLevelUp()
     end
-    
+
     function this:onReconnect()
     end
-    
+
     function this:onSendSettLement()
     end
-    
+
     function this:onGetPrivilege()
     end
-    
+
     function this:onDeadSummary()
     end
-    
+
     function this:onSave()
     end
-    
+
     function this:onHittedByRay()
     end
-    
+
     function this:onDropItem()
     end
-    
+
     function this:onVpForbidSprint()
     end
-    
+
     function this:onBuyResult()
     end
-    
+
     function this:onRideOff()
     end
-    
+
     function this:onPreDamage()
     end
-    
+
     function this:onDoDamage()
     end
-    
+
     function this:onVpRecoveryHp()
     end
-    
+
     function this:onClikc()
     end
-    
+
     function this:onBuyAppStop()
     end
-    
+
     function this:onStopTouch()
     end
-    
+
     function this:onHitCastSkill()
     end
-    
+
     return this
 end)
 

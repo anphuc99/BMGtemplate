@@ -2,7 +2,7 @@
 local protocol = {}
 
 ---@param package_name string
----@param controller any
+---@param controller function
 function protocol:register(package_name, controller)
     PackageHandlers.registerServerHandler(package_name,function (player,package)
         local player = PlayerModel:getPlayer(player)

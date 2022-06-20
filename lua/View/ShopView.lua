@@ -12,12 +12,10 @@ ShopView:create("ShopView",function ()
     end
     
     function this:controllerSend(package)
-        print("co nha", package.text) 
         this.Win.Text:setText(package.text)
     end
     
     function this:viewSend()
-        print("co nha")
         this.Win.Text:setText("click")
         this:sendController(PackageHandlers.SEND_VIEW_TO_CONTROLLER)
     end

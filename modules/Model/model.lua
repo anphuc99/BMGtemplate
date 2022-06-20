@@ -30,6 +30,14 @@ model:create("model",function ()
         Lib.emitEvent(package_name,this,package)
     end
 
+    function this:sendView(player,package_name,package)
+        PackageHandlers.sendServerHandler(player,package_name,package)
+    end
+
+    function this:sendViewToAll(package_name,package)
+        PackageHandlers.sendServerHandlerToAll(package_name,package)
+    end
+
     function this:save()
         local data = {}
         for key, value in pairs(this.atributtes) do

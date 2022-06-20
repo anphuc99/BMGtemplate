@@ -1,4 +1,4 @@
-PlayerModel = {}
+rawset(_G,"PlayerModel",{})
 
 PlayerModel.list = {}
 
