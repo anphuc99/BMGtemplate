@@ -1,10 +1,13 @@
 {
+  "blinn": 0,
   "canBreak": true,
+  "hdr": 0,
   "hideCloud": true,
   "moveDownGravity": 0.15,
   "scene": [
     {
       "class": "VoxelTerrain",
+      "customProperties": [],
       "properties": {
         "__folder_id": "",
         "id": "26644713697705985",
@@ -13,17 +16,50 @@
       }
     },
     {
+      "class": "Light",
+      "customProperties": [],
+      "properties": {
+        "batchType": "Static",
+        "id": "8680593800954986497",
+        "ID": "1",
+        "lightActived": "true",
+        "lightAngle": "30.0",
+        "lightBrightness": "10",
+        "lightColor": "r:1.0 g:1.0 b:1.0 a:1.0",
+        "lightLength": "1.0",
+        "lightRange": "8.0",
+        "lightType": "GlobalLight",
+        "lightWidth": "1.0",
+        "name": "Light",
+        "needSync": "true",
+        "position": "x:0 y:0 z:0",
+        "rotation": "x:0 y:0 z:0",
+        "scale": "x:1 y:1 z:1",
+        "selectable": "true",
+        "shadowsDistance": "20.0",
+        "shadowsIntensity": "1.0",
+        "shadowsOffset": "0.02",
+        "shadowsPresicion": "1024",
+        "shadowsType": "null",
+        "skyColor": "r:0.49803921568627 g:0.51372549019608 b:0.54509803921569 a:1.0",
+        "skyLineColor": "r:0.23921568627451 g:0.22745098039216 b:0.2078431372549 a:1.0"
+      }
+    },
+    {
       "class": "Part",
+      "customProperties": [],
       "properties": {
         "angleVelocity": "x:0 y:0 z:0",
+        "batchType": "Static",
         "bloom": "false",
         "booleanOperation": "0",
         "btsKey": "bdadae19-796a-482c-badc-212dab347d24",
         "cameraCollideEnable": "true",
+        "collisionFidelity": "0",
         "collisionUniqueKey": "",
         "customThreshold": "1",
         "density": "2.2",
-        "discardAlpha": "1.0",
+        "discardAlpha": "1",
         "friction": "0.37",
         "id": "8677892069352079361",
         "isLockedInEditor": "false",
@@ -64,6 +100,7 @@
       ]
     }
   ],
+  "skyBoxMode": "static_display",
   "skyBoxRotate": {
     "x": 0,
     "y": 0,

@@ -9,17 +9,47 @@ Player:create("Player",function ()
     ---@class Player : player_model
     local this,super = player_model:extend()
     
+    local name
+    local mine
+    local money
+
+    this:get("name",function ()
+        return name
+    end)
+
+    this:set("name",function (value)
+        name = value
+    end)
+
+    this:get("mine",function ()
+        return mine
+    end)
+
+    this:set("mine",function (value)
+        mine = value
+    end)
+
+    this:get("money",function ()
+        return money
+    end)
+
+    this:set("money",function (value)
+        money = value
+    end)
+    
+    this.atributtes = {
+        "name",
+        "mine",
+        "money"
+    }
+    
+
+
     function this:__constructor(obj)
         super:__constructor(obj)
     end
     
-    function this:onTouchPartBegin(context)
-        this:sendController(PackageHandlers.TEST_VIEW,{text = "mamama"})
-    end
 
-    function this:onInit()
-        super:onInit()
-    end
 
     return this
 end)

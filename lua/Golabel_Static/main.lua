@@ -1,3 +1,4 @@
+require "Golabel_Static.log"
 require "Golabel_Static.Event"
 require "Golabel_Static.Lib"
 require "Golabel_Static.PackageHandlers"

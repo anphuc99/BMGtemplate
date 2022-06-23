@@ -1,16 +1,38 @@
 local class = require "modules.class.class"
+local async = require "modules.async.async"
 
 local View = class()
 
 View:create("View",function ()
-    ---@class View
-    local this = {}
+    ---@class View : async
+    local this = async:extend()
     
-    this.UI = nil    
-    this.Win = nil
+    this.UI = ""    
+    this.Win = ""
 
-    function this:sendController(controller,package)
-        PackageHandlers.sendClientHandler(controller,package)
+    function this:sendController(controller,package,func)
+        PackageHandlers.sendClientHandler(controller,package,func)
+    end
+    
+    function this:sendControllerAsync(controller,package)
+        local protocol = (Me.platformUserId+os.time()+math.random(1,1000000000))
+        if type(package) ~= "table" then
+            log:error("Invalid data type: Data type must be table")            
+        end
+        package.protocol = protocol
+        local can = {}
+        local cancel, index = Lib.subscribeEvent(protocol,function (package)
+            package.protocol = nil
+            this.SetReturn(package)
+            this.Return()
+            can:cancel()
+        end)      
+        function can:cancel()
+            cancel()
+        end
+        PackageHandlers.sendClientHandler(controller,package)  
+        package.protocol = nil
+        this.wait()
     end
 
     function this:openUI()
@@ -21,11 +43,10 @@ View:create("View",function ()
     function this:closeUI()
         this:onCloseUI(this.Win)
         this.Win:close()
-        this.Win = nil
+        this.Win = ""
     end
 
     function this:onOpenUI(UI)
-        
     end
 
     function this:onCloseUI(UI)

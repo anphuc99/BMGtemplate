@@ -3,7 +3,7 @@ local event_model = class()
 
 event_model:create("event_model",function ()
     ---@class event_model
-    local this = {}
+    local this = event_model:this()
     
     function this:__constructor(event)
         this.event = event
